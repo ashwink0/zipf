@@ -20,7 +20,7 @@ function App() {
 					<textarea
 						value={text}
 						onChange={e => setText(e.target.value)}
-						style={{width: '90%', height: '200px', minWidth: '90%', minHeight: '200px',maxWidth: '400px', maxHeight: '400px'}}
+						style={{width: '90%', height: '200px', minHeight: '200px',maxHeight: '600px', resize: 'vertical'}}
 					/>
 
 					<button onClick={() => {
@@ -30,7 +30,7 @@ function App() {
 					</button>
 				</div>
 
-				<div style={{color: 'black', flex: 2, width: '50%', height: '35%'}}>
+				<div style={{color: 'black', flex: 2, width: '50%', height: '35%', margin: '0px'}}>
 						<LineChart
 							width={700}
 							height={500}
