@@ -3,6 +3,7 @@
 }
 
 .App-header {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
   min-height: 100vh;
   display: flex;
   flex-direction: row;

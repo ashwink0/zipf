@@ -4,28 +4,35 @@ import {
 	LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, AreaChart, Area, ResponsiveContainer
 } from 'recharts';
 import './App.css';
-
 import {getData} from './util'
-
+import {theGreatGatsby} from "./texts";
 let data = getData('Hello my name is Ashwin. This is a sentence');
 
 function App() {
 	const [text, setText] = useState("")
 	const [textData, setTextData] = useState([])
-
 	return (
 		<div className="App">
 			<header className="App-header">
 				<div style={{flex: 1}}>
+					<button
+						style={{margin: '40px'}}
+						onClick={() => {
+							setText(theGreatGatsby);
+						}}
+					>Load 'The Great Gatsby'</button>
+
 					<textarea
 						value={text}
 						onChange={e => setText(e.target.value)}
-						style={{width: '90%', height: '200px', minHeight: '200px',maxHeight: '600px', resize: 'vertical'}}
+						style={{width: '90%', height: '200px', minHeight: '200px',maxHeight: '500px', resize: 'vertical'}}
 					/>
 
 					<button onClick={() => {
-						// @ts-ignore
-						setTextData(getData(text))
+						if(text !=='') {
+							// @ts-ignore
+							setTextData(getData(text))
+						}
 					}}>Graph Data
 					</button>
 				</div>
