@@ -4,12 +4,11 @@ import {
 	LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, AreaChart, Area, ResponsiveContainer
 } from 'recharts';
 import './App.css';
-import {getData} from './util'
+import {getData, getAverageSpread} from './util'
 import {theGreatGatsby} from "./texts";
-let data = getData('Hello my name is Ashwin. This is a sentence');
 
 function App() {
-	const [text, setText] = useState("")
+	const [text, setText] = useState('')
 	const [textData, setTextData] = useState([])
 	return (
 		<div className="App">
@@ -40,7 +39,7 @@ function App() {
 				<div style={{color: 'black', flex: 2, width: '50%', height: '35%', margin: '0px'}}>
 						<LineChart
 							width={700}
-							height={500}
+							height={450}
 							data={textData}
 							margin={{
 								top: 5, right: 5, left: 5, bottom: 5,
@@ -54,6 +53,7 @@ function App() {
 							<Line type="monotone" dataKey="expected" stroke="#8884d8" activeDot={{r: 5}} dot={<div/>}/>
 							<Line type="monotone" dataKey="actual" stroke="#FF0000" activeDot={{r: 5}} dot={<div/>}/>
 						</LineChart>
+						<h5>Average Difference: {Math.round((getAverageSpread(textData) + Number.EPSILON) * 100) / 100} occurrences</h5>
 				</div>
 			</header>
 		</div>

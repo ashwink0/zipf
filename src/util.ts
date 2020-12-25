@@ -2,7 +2,6 @@ let fs = require('fs');
 const util = require("util");
 
 export function getData(text: string) {
-	console.log('a')
 	let frequencies = getWordFrequency(text.replace(/\r?\n|\r/g, '').replace(/\r?\'|\r/g, ''))
 
 	var sortable = [];
@@ -15,20 +14,25 @@ export function getData(text: string) {
 		return a[1] - b[1];
 	});
 
-	console.log(JSON.stringify(sortable))
-
 	let max: number= parseInt(sortable[sortable.length - 1][1]);
 
 	let retData: { name: string; actual: string; expected: number; }[]=[]
 
 	sortable.reverse().map((item, index) => {
-		console.log(item)
 		retData.push({
 			name: item[0], actual: item[1], expected: Math.round(max/(index+1))
 		})
 	})
-	console.log(retData);
 	return retData;
+}
+
+export function getAverageSpread(textData: { name: string; actual: number; expected: number; }[]){
+	let averageSpread:number=0;
+	textData.map(item => {
+		averageSpread+=(item.actual-item.expected)
+	})
+	averageSpread/=textData.length;
+	return averageSpread
 }
 
 
