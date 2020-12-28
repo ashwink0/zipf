@@ -1,19 +1,31 @@
 import React from 'react';
-import {useState, useEffect} from "react";
+import {useState, useLayoutEffect} from "react";
 import {
-	LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, AreaChart, Area, ResponsiveContainer
+	LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
 } from 'recharts';
 import './App.css';
-import {getData, getAverageSpread} from './util'
+import {getData, getAverageSpread, getWordCount} from './util'
 import {theGreatGatsby} from "./texts";
 
 function App() {
 	const [text, setText] = useState('')
 	const [textData, setTextData] = useState([])
+	const [width, setWidth]=useState(0)
+
+
+	useLayoutEffect(() => {
+		function updateSize() {
+			setWidth(window.innerWidth);
+		}
+		window.addEventListener('resize', updateSize);
+		updateSize();
+		return () => window.removeEventListener('resize', updateSize);
+	}, []);
+
 	return (
 		<div className="App">
-			<header className="App-header">
-				<div style={{flex: 1}}>
+			<header className="App-header" style={width<600 ? {flexDirection: 'column', alignItems: 'flex-start', textAlign: "center"} : {flexDirection: 'row'}}>
+				<div style={{flex: 2, color: 'black'}}>
 					<button
 						style={{margin: '40px'}}
 						onClick={() => {
@@ -34,12 +46,15 @@ function App() {
 						}
 					}}>Graph Data
 					</button>
+
+					{getWordCount(text)<50 && getWordCount(text)!==1 ? <h6 style={{fontSize: '10px', margin: '3px'}}>Results may not be accurate because of the low word count.</h6>: null}
 				</div>
 
-				<div style={{color: 'black', flex: 2, width: '50%', height: '35%', margin: '0px'}}>
+				<div style={{color: 'black', flex: 3, width: '50%', height: '100%', margin: '0px', left: '0px', textAlign: 'center'}}>
 						<LineChart
-							width={700}
-							height={450}
+							style={{left: '0px'}}
+							width={width<600 ? 500 : 700}
+							height={width<600 ? 320 : 450}
 							data={textData}
 							margin={{
 								top: 5, right: 5, left: 5, bottom: 5,

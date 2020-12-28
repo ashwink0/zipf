@@ -1,12 +1,15 @@
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .App-header {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   min-height: 100vh;
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
   font-size: calc(10px + 2vmin);

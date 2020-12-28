@@ -26,6 +26,11 @@ export function getData(text: string) {
 	return retData;
 }
 
+export function getWordCount(text: string){
+	console.log(text.split(' ').length);
+	return text.split(' ').length
+}
+
 export function getAverageSpread(textData: { name: string; actual: number; expected: number; }[]){
 	let averageSpread:number=0;
 	textData.map(item => {
