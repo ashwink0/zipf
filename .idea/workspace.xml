@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ebcfc63-c362-42f7-843e-d9a8415d0020" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/Information.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/texts.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/texts.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/util.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/util.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -17,6 +21,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -69,7 +74,10 @@
       <workItem from="1608764148133" duration="41000" />
       <workItem from="1608772051126" duration="1564000" />
       <workItem from="1608920575755" duration="4454000" />
-      <workItem from="1609113355229" duration="2640000" />
+      <workItem from="1609113355229" duration="3226000" />
+      <workItem from="1609123688302" duration="353000" />
+      <workItem from="1609312447638" duration="118000" />
+      <workItem from="1609349160779" duration="7243000" />
     </task>
     <servers />
   </component>

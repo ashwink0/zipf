@@ -16,3 +16,12 @@
   color: white;
 }
 
+.textDiv{
+  display: flex;
+  flex: 2;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  color: black;
+  min-height: 100vh;
+}
