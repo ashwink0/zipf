@@ -25,6 +25,10 @@ function App() {
 		return () => window.removeEventListener('resize', updateSize);
 	}, []);
 
+	let avgDifference = () => {
+		return Math.abs(Math.round((getAverageSpread(textData) + Number.EPSILON) * 100) / 100)
+	}
+
 	return (
 		<div className="App">
 			<header className="App-header" style={width < 600 ? {
@@ -34,7 +38,7 @@ function App() {
 			} : {flexDirection: 'row'}}>
 				<Information/>
 
-				<div style={{flex: 2, color: 'black'}}>
+				<div style={{flex: 2, color: 'black', marginTop: "50px"}}>
 					<Button
 						size={"small"}
 						variant="contained"
@@ -63,8 +67,9 @@ function App() {
 					</Button>
 
 					{getWordCount(text) < 50 && getWordCount(text) !== 1 ?
-						<h6 style={{fontSize: '10px', margin: '3px'}}>Results may not be accurate because of the low word
-							count.</h6> : null}
+						<h6 style={{fontSize: '10px', margin: '3px'}}>
+							Results may not be accurate because of the low word count.
+						</h6> : null}
 				</div>
 
 				<div style={{
@@ -94,7 +99,7 @@ function App() {
 						<Line type="monotone" dataKey="actual" stroke="#FF0000" activeDot={{r: 5}} dot={<div/>}/>
 					</LineChart>
 					<h5>Average
-						Difference: {Math.round((getAverageSpread(textData) + Number.EPSILON) * 100) / 100} occurrences</h5>
+						Difference: {avgDifference()} occurrences</h5>
 
 				</div>
 			</header>

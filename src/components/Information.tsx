@@ -31,14 +31,14 @@ export default function Information() {
 	return (
 		<div style={{position: 'fixed', left: '5px', top: '5px'}}>
 			<Button aria-describedby={id} variant="contained" color="primary" onClick={handleClick} startIcon={<Help/>}>
-				Info
+				Information
 			</Button>
 			<Popover
 				id={id}
 				open={open}
 				anchorEl={anchorEl}
 				onClose={handleClose}
-				style={{width: '400px'}}
+				style={{width: '300px'}}
 				anchorOrigin={{
 					vertical: 'bottom',
 					horizontal: 'left',
