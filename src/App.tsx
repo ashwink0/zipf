@@ -99,8 +99,8 @@ function App() {
 						<Line type="monotone" dataKey="actual" stroke="#FF0000" activeDot={{r: 5}} dot={<div/>}/>
 					</LineChart>
 					<h5>Average
-						Difference: {avgDifference()} occurrences</h5>
-
+						Difference: {avgDifference()} occurrences
+					</h5>
 				</div>
 			</header>
 		</div>
